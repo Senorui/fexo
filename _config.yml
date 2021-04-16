@@ -1,0 +1,277 @@
+# Blog info
+blog_name: Senorui
+slogan:  Be a charming badass, kind but not happy.
+url: https://senorui.top/
+
+# Set avatar (Absolute url and relative url)
+avatar: /img/home/avatar.webp
+
+# rss
+rss: /atom.xml
+
+# Set favicon
+favicon: /icon/favicon.ico
+
+# For seo
+keywords: 睿先森,博客,Senorui,hexo,静态网站,学习分享
+
+home_nav:
+  - name: 文档
+    icon: fa fa-home
+    url: /archives/
+    target_blank: false #不在新页面打开
+  - name: 项目
+    icon: fa fa-code
+    url: /project/
+    target_blank: false 
+  - name: 导航
+    icon: fa fa-paper-plane
+    url: https://nav.senorui.top/
+    target_blank: true #在新页面打开     
+  - name: 音乐
+    icon: fa fa-music
+    url: https://music.senorui.top/
+    target_blank: true 
+  - name: 开往
+    icon: fa fa-subway
+    url: https://travellings.now.sh/
+    target_blank: true    
+  - name: 关于
+    icon: fa fa-address-card
+    url: /about/
+    target_blank: false
+
+# config page nav
+page_nav:
+  - name: 文档
+    url: /archives/
+    target_blank: false # 不在新页面打开
+  - name: 分类
+    url: /category/
+    target_blank: false
+  - name: 标签
+    url: /tag/
+    target_blank: false 
+  - name: 友链
+    url: /link/
+    target_blank: false
+  - name: 关于
+    url: /about/
+    target_blank: false
+  - name: 搜索
+    url: /search/
+    target_blank: false
+  - name: RSS
+    url: /atom.xml
+    target_blank: true # 在新页面打开
+
+page_nav_style: CIRCLE  # CIRCLE|ROUND_RECT
+
+# 面包屑
+breadcrumb:
+  isShow: true # true|false
+
+# 盒子
+toolbox:
+  isShow: true # true|false
+  text: 菜单
+
+search_slogan:
+  isShow: true # true|false
+  text: 可以在这里搜索本站内容哦！
+
+link_slogan:
+  isShow: true # true|false
+  text: 欢迎交换友链！交换友链请发邮件到 info@senorui.com
+
+link_info:
+  isShow: true # true|false
+  text: 本站信息见最末友链，因防盗链特麻烦大家在此右键复制图片地址。
+
+# set backtop show or hide
+backtop:
+  home: false
+  archive: false
+  category: true
+  tag: true
+  post: true
+  diary: true
+  link: true
+  about: false
+
+donation:
+  show: true
+  btn_text: 支持一下
+  tip: 欢迎和Senorui进行PY交易😎！
+  items:
+    - type: 微信
+      text: 微信扫一扫
+      imgUrl: /img/home/qr-wechat.webp
+    - type: 支付宝
+      text: 支付宝扫一扫
+      imgUrl: /img/home/qr-alipay.webp
+
+
+post:
+  header_align: CENTER # LEFT|CENTER
+  showToc: true # true|false
+  showComments: true
+  open_in_new_window: false
+  show_prev_next: true
+
+# 文章版权声明
+post_copyright:
+  isShow: true   # true|false  
+
+# =========================================================
+# 个性化设置
+# =========================================================
+
+# Custom CSS style, 推荐把样式文件放在blog源码文件夹，而不是主题里面
+personal_style: /css/personal.css
+
+# 这个值取决于你得首页背景图片是深色还是浅色，深色用dark，浅色用light
+# home_background_scheme: light # dark、light
+# 已经弃用，深色模式下会自动切换
+
+
+# custom font-family 暂时只支持这3种英文字体，你可以完全自定义字体(看文档)
+blog_name_font_familiy: Lobster-Regular
+# blog_name_font_familiy: Lobster-Regular,PoiretOne-Regular,Linux Biolinum
+
+# 首页显示的是导航还是文章归档
+init_page_content: HOME_NAV  # HOME_NAV | POST
+
+
+# =========================================================
+# 第三方服务
+# =========================================================
+
+# 中国天气网插件：https://cj.weather.com.cn/plugin/simple
+# 和风天气插件：https://widget.qweather.com/create-simple
+# 默认和风插件，若要更换记得修改插件DIV的id和api地址。
+mywth:
+  isopen: true       # true|false
+  key: xxxxxxx    # 你的天气插件key
+
+# 今日诗词API
+jinrishici:
+  isopen: true       # true|false
+
+# 首页foot 
+foot:
+  isopen: true  # true|false
+  webdate: 2018-2021    # 你的建站时间
+  icp: 滇ICP备20005709号  # 你的ICP备案号
+  gicp: 滇公网安备53011402000463号  # 你的公网安备案号
+  gicp_url: https://4m.cn/U6Xy9      # 你的公网安备网址
+
+# pwa
+pwa:
+  isopen: true                    # true|false
+  manifest: /site.webmanifest     # manifest url，需要根据实际修改site.webmanifest文件并放在博客根目录下
+  name: 睿先森                    # pwa name
+  background_color: abd7ff        # pwa background color, not need "#"
+  theme_color: abd7ff             # pwa theme color, not need "#"
+
+# 开启mathjax支持，若需要则开启否则建议关闭
+mathjax:
+  isopen: false  # true|false
+  cdn: https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+# 百度统计
+baidu_analytics:
+  isopen: false  # true|false
+  id: xxxxxxxxxxxxx   # 百度统计ID
+
+# 不蒜子统计
+busuanzi: true   # true|false
+
+# Comment service
+
+
+# =========================================================
+# 页面内容设置
+# =========================================================
+
+about:
+  - type: web
+    icon: icon-home
+    text_value:
+    - "本站由Hexo驱动."
+    - "华为云提供静态存储与加速服务."
+    - "本站用于记录个人生活中的所学、所思和所悟."
+    - "根据相关法律法规，本站不对欧盟用户提供服务."
+  - type: me
+    icon: icon-user
+    text_value:
+    - "March，1998，Spring."
+    - "喜欢探索，喜欢瞎搞，擅长睡懒觉."
+    - "非计算机专业的小白一枚，喜欢探索计算机领域，然并卵."
+    - "曾经梦想征服星辰大海，后来却发现自己只是变成了一颗繁星."
+  - type: Github
+    icon: icon-github
+    text_key: Github
+    text_value: "@Senorui"
+    text_value_url: https://github.com/Senorui
+  - type: QQ
+    icon: icon-qq
+    text_key: Chat to
+    text_value: "@Senorui"
+    text_value_url: /qq.html
+  - type: Email
+    icon: icon-mail
+    text_key: Email To
+    text_value: "@Senorui"
+    text_value_url: https://mailhide.io/zh/e/SttMQ6mq
+  - type: location
+    icon: icon-location
+    text_value: 中国 · 昆明
+  - type: web
+    icon: icon-info-with-circle
+    text_key: 本站的
+    text_value: "@隐私声明"
+    text_value_url: /about/privacy-policy.html
+  - type: web
+    icon: icon-feather
+    text_key: 本站的
+    text_value: "@访问统计"
+    text_value_url: https://tongji.baidu.com/web/welcome/ico?s=45d43774ea060c954e384c4d3a6b66e1
+
+link:
+  - name: Sanarous's Blog
+    info: Dream it possible, make it possible
+    url: https://bestzuo.cn/
+    avatar: /img/friends/Sanarous.webp
+  - name: 睿先森
+    info: Be a charming badass, kind but not happy.
+    url: https://senorui.top/
+    avatar: https://s3.ax1x.com/2020/12/29/rqEtzj.png
+
+  #- name: 
+  #  info: 
+  #  url: 
+  #  avatar: /images/friends/.png
+
+project:
+  - type: personal
+    name: API
+    url: https://api.senorui.top/
+    intro: A self-use random image API.
+  - type: personal
+    name: Fexo
+    url: https://github.com/Senorui/fexo
+    intro: A minimalist design theme for hexo.
+  - type: personal
+    name: Vitreous
+    url: https://github.com/Senorui/Vitreous
+    intro: A transparent style navigation homepage.
+  - type: personal
+    name: Music player
+    url: https://github.com/Senorui/music
+    intro: A translucent and textured music player.
+
+#  - type: personal
+#    name: 
+#    url: 
+#    intro: 

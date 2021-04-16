@@ -1,0 +1,32 @@
+<% if (theme.pwa.isopen){ %>
+  <link rel="manifest" href="<%= theme.pwa.manifest %>">
+  <meta name="apple-mobile-web-app-title" content="<%= theme.pwa.name %>">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#<%= theme.pwa.background_color %>">  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="<%= theme.pwa.name %>">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#<%= theme.pwa.theme_color %>">
+  <!-- 注册ServiceWorker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function (registration) {
+                    console.log('sw.js 注册成功', registration.scope);
+                })
+                .catch(function (err) {
+                    console.log('sw.js 注册失败 ', err);
+                });
+         });
+    }
+    // 保证是最新的sw.js
+    window.onload = function () {
+        var script = document.createElement('script');
+        var firstScript = document.getElementsByTagName('script')[0];
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = '/sw.js?v=' + Date.now();
+        firstScript.parentNode.insertBefore(script, firstScript);
+    };
+  </script>
+<% } %>  

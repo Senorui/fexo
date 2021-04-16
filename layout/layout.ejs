@@ -1,0 +1,21 @@
+<%- partial('_partial/head') %>
+<body>
+  <% if(theme.toolbox && theme.toolbox.isShow == true && page.base !== '') { %>
+    <span id="toolbox-mobile" class="toolbox-mobile"><%=  theme.toolbox.text %></span>
+  <% } %>
+
+  <%- body %>
+  <%- partial('_partial/component/modal') %>
+  <%- partial('_partial/load-script') %>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="/js/instantpage.js" type="module"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin >
+
+</body>
+</html>

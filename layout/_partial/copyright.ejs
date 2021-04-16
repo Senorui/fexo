@@ -1,0 +1,18 @@
+<% if (theme.post_copyright.isShow){ %>
+<div class="post-copyright"  id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：</b>
+        <a href="<%= config.root %>" target="_blank" title="<%= config.author %>">
+        <%= config.author %></a>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：</b>
+        <a href="<%- config.root %><%- post.path %>" target="_blank" title="<%= post.title %>">
+        <%- config.url %>/<%- post.path %></a>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><a rel="external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+<% } %>

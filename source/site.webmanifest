@@ -1,0 +1,33 @@
+{
+    "lang": "zh-CN",
+    "name": "睿先森",
+    "short_name": "睿先森",
+    "description": "这是一个睿先森(Senorui)记录和分享生活中所学、所思和所悟的小破站。",
+    "theme_color": "#abd7ff",
+    "background_color": "#abd7ff",
+    "start_url": "/",
+    "Scope": "/",
+    "display": "standalone",
+    "minPlatformVersion": 1065,
+    "icons": [{
+        "src": "/icon/icon-96x96.ico",
+        "type": "image/png",
+        "sizes": "96x96"
+    },{         
+        "src": "/icon/icon-144x144.ico",
+        "type": "image/png",
+        "sizes": "144x144"
+    },{    
+        "src": "/icon/icon-192x192.ico",
+        "type": "image/png",
+        "sizes": "192x192"
+    },{
+        "src": "/icon/icon-256x256.ico",
+        "type": "image/png",
+        "sizes": "256x256"
+    },{              
+        "src": "/icon/icon-512x512.ico",
+        "type": "image/png",
+        "sizes": "512x512"
+    }]
+}

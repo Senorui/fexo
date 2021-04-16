@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-<%= page.base ? page.base.replace(/\//g, '') : page.layout ? page.layout : 'home' %>">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="copyright" content="Senorui" />
+  <meta name="robots" content="noimageindex" />
+  <meta http-equiv="Cache-Control" content="private" />
+  <meta http-equiv="content-type" content="text/html, charset=UTF-8, X-Content-Type-Options=nosniff, X-XSS-Protection: 1, mode=block" />
+
+  <!-- Google font预加载&缓存 -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com/"
+        crossorigin />
+  
+  <noscript>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'" />
+  </noscript>
+
+  <%
+  var title = page.title;
+
+  if (is_archive()){
+    title = '文档';
+
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = 'Category: ' + page.category;
+  } else if (is_tag()){
+    title = 'Tag: ' + page.tag;
+  }
+  %>
+  <title itemprop="name"><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86, user-scalable=0">
+
+  <% if (page.tags && page.tags.length && config.keywords) { %>
+    <meta name="keywords" content="<% page.tags.forEach(function(tag) { %><%= tag.name %>,<% }); %><%= config.keywords %>" />
+  <% } else { %>
+    <meta name="keywords" content="<%= theme.keywords %>" />
+  <% } %>
+
+  <%- open_graph() %>
+
+  <% if (theme.rss){ %>
+    <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+  <% } %>
+
+  <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
+  <%- partial('pwa') %>
+
+  <%- partial('style') %>
+  
+  <% if (theme.personal_style){ %>
+    <%- css(theme.personal_style) %>
+  <% } %>
+
+  <%- partial('baidu-analytics') %>
+
+  <% if (theme.busuanzi){ %>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <% } %>
+
+</head>

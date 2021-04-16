@@ -1,0 +1,83 @@
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title"><%= post.title || '(标题还没想好)' %></h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp<%= date(post.date, 'YYYY.MM.DD') %></span>
+      </span>
+
+      <% if (config.author){ %>
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbsp<%= config.author %></span>
+        </span>
+      <% } %>
+
+      <%- partial('component/category') %>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 <%= wordcount(post.content) %>
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 <%= min2read(post.content) %>分</span>
+      </span>
+
+      <% if (theme.busuanzi){ %>
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      <% } %>
+      
+    </div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    <% if (post.excerpt && index){ %>
+      <%- post.excerpt %>
+      <% if (theme.excerpt_link){ %>
+        <p class="article-more-link">
+          <a class="btn btn-primary" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+        </p>
+      <% } %>
+    <% } else { %>
+      <%- post.content %>
+      <%- partial('copyright') %>
+    <% } %>
+  </div>
+  
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type='text/css' rel="preload stylesheet" as="style" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" defer src="https://cdn.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js" ></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type='text/css' rel="preload stylesheet" as="style" href="https://cdn.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+  
+  <% if(theme.mathjax.isopen) {%>
+    <%- partial('mathjax')%>
+  <% } %>
+</article>

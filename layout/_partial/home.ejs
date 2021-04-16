@@ -1,0 +1,58 @@
+<div class="content-home text-center">
+  <a class="avatar" v-if="img_url" href="/">
+    <img src="<%= theme.avatar %>"：onerror="defaultImg" alt="头像">
+  </a>
+  <h1 class="name" style="font-family: <%= theme.blog_name_font_familiy || 'calligraffittiregular' %>">
+    <%= theme.blog_name %>
+  </h1>
+  <div class="slogan">
+    <%= theme.slogan %>
+  </div>
+
+  <hr>
+
+  <ul class="text-center nav">
+    <% theme.home_nav.forEach(function(item, i){ %>
+      <i class="<%= item.icon%>" aria-hidden="true"></i>
+      <li class="item">
+        <% if(item.target_blank === true) { %>
+          <a href="<%= item.url %>" rel="noopener noreferrer"><%= item.name %></a>
+        <% } else { %>
+          <a href="<%= item.url %>"><%= item.name %></a>
+        <% } %>
+        <span>|</span>
+      </li>
+    <% }) %>
+  </ul>                   
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+</div>
+
+<!--天气插件-->
+<% if (theme.mywth.isopen){ %>
+  <div class="mywth">
+    <div id="he-plugin-simple"></div>
+    <script>WIDGET = {CONFIG:{"modules":"10234","background":5,"tmpColor":"#999","tmpSize":"14","cityColor":"#999","citySize":"14","aqiSize":"14","weatherIconSize":"20","alertIconSize":"16","padding":"0px","shadow":"0","language":"auto","borderRadius":5,"fixed":"false","vertical":"middle","horizontal":"left","key":"<%= theme.mywth.key %>"}}</script>
+    <script async src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+  </div>
+<% } %>
+
+<!-- 今日诗词API -->
+<% if (theme.jinrishici.isopen){ %>
+  <div class="jinrishici">
+    <script type="text/javascript" aysnc src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
+    <a id="jinrishici-sentence" style="color:#333">...加载中...</a>
+  </div>
+<% } %>
+
+<!-- 首页foot -->
+<% if (theme.foot.isopen){ %>
+  <div class="gicpbei">
+    <img src="/img/ga.webp" style="width:12px; align:middle;"/> <a style="color:#00e666" href="<%= theme.foot.gicp_url %>" rel="external nofollow noopener noreferrer" target="_blank"><%= theme.foot.gicp %></a>
+  </div>
+  <div class="icpbei">
+    <a style="color:#555"> © <%= theme.foot.webdate %> <%= config.author %></a>
+     | 
+    <a style="color:#555" href="https://beian.miit.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank"><%= theme.foot.icp %></a>
+  </div>
+<% } %>
