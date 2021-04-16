@@ -4,6 +4,8 @@ const urlsToCache = [
     '/css/styles.css',
     '/css/personal.css',
     '/img/home/avatar.webp',
+    '/img/home/qr-alipay.webp',
+    '/img/home/qr-wechat.webp',
 ];
 
 // Serverice Worker 安装成功后触发该事件
